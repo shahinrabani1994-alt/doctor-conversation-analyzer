@@ -3,7 +3,9 @@ from openai import OpenAI
 import os
 
 app = Flask(__name__)
-
+@app.route("/")
+def home():
+    return {"status": "ok", "service": "doctor-conversation-analyzer"}
 client = OpenAI(
     api_key=os.environ["OPENAI_API_KEY"]
 )
